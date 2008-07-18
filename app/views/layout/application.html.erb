@@ -1,11 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
-  <head>
-    <title>Fresh Merb App</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8" />
-  </head>
-  <body>
-    <%= catch_content :for_layout %>
-  </body>
+	<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        
+		<title>BryanRay.NET - Pragmatic, Agile, Ruby on Rails, Developer</title>
+		
+		<%= css_include_tag 'clearfixes', 'ie6', 'resets', 'master' %>
+		
+		<%= js_include_tag 'application' %>
+		<%= include_required_js %>
+	</head>
+	
+    <body>
+        <%= catch_content :for_layout %>
+    </body>
 </html>

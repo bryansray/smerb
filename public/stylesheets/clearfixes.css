@@ -1,0 +1,48 @@
+/* float clearing for IE6 */
+* html #start-items,
+* html #app-menu,
+* html #forum-breadcrumbs,
+* html #forum-header,
+* html .page-title,
+* html .welcome-columns,
+* html #center,
+* html .clearfix,
+* html form,
+* html .form-element {
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html #start-items,
+*+html #app-menu,
+*+html #forum-breadcrumbs,
+*+html #forum-header,
+*+html .page-title,
+*+html .welcome-columns,
+*+html #center,
+*+html .clearfix,
+*+html form,
+*+html .form-element {
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+#aboutme:after,
+#start-items:after,
+#app-menu:after,
+#forum-breadcrumbs:after,
+#forum-header:after,
+.page-title:after,
+.welcome_feature:after,
+.welcome-columns:after,
+#center:after,
+.clearfix:after,
+form:after,
+.form-element:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
