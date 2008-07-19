@@ -57,6 +57,23 @@ Gem.path.unshift(Merb.root / "gems")
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
+
+dependency "merb-assets"
+dependency "merb-haml"
+dependency "merb-mailer"
+dependency "merb-parts"
+dependency "merb-slices"
+dependency "merb-auth"
+dependency "merb_helpers"
+dependency "dm-validations"
+dependency "dm-timestamps"
+dependency "dm-aggregates"
+# dependency "dm-is-state_machine"
+
+Merb::BootLoader.before_app_loads do 
+  Merb::Slices::config[:merb_auth][:layout] = :application 
+end
+
 Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
 
