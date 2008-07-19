@@ -5,3 +5,8 @@ Merb::Config.use { |c|
   c[:reload_time] = 0.5
   c[:log_auto_flush ] = true
 }
+
+# For debugging datamapper queries
+Merb::BootLoader.after_app_loads do
+  DataObjects::Mysql.logger = DataObjects::Logger.new('log/dm.log', 0)
+end
