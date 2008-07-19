@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'merb-core'
 require 'spec' # Satisfies Autotest and anyone else not using the Rake tasks
+require 'mocha'
 
 # this loads all plugins required in your init file so don't add them
 # here again, Merb will do it for you
