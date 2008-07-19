@@ -1,0 +1,38 @@
+body {
+	font-family: "Lucida Grande", Lucida, Verdana, Helvetica;
+	font-size: 9pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 5px;
+}
+
+h6 {
+	font-size: 10pt;
+}
+
+h5 {
+	font-size: 12pt;
+}
+
+h4 {
+	font-size: 14pt;
+}
+
+h3 {
+	font-size: 16pt;
+}
+
+h2 {
+	font-size: 18pt;
+}
+
+h1 {
+	font-size: 20pt;
+}
+
+p {
+	margin-bottom: 15px;
+	line-height: 1.4em;
+}
+

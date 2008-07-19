@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: transparent url(/images/background-fade-blue.png) repeat-x 0 0px;
+}
+
+.header {
+	height: 225px;
+}
+
+.header .logo {
+	position: relative;
+	height: 225px;
+}
+
+.outer {
+	text-align: center;
+}
+
+.wrapper {
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	width: 880px;
+}
+
+.wrapper .inner {
+	padding: 10px;
+}
+
+.navigation {
+	background-color: #efefef;
+	padding: 10px 0px 1px 0px;
+	border-bottom: 1px solid #cecece;
+	border-top: 1px solid #cecece;
+	font-size: 10pt;
+}
+
+.navigation ul {
+	list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li {
+  float: left;
+  margin: 5px;
+}
+
+.navigation ul li.current a {
+	font-weight: bold;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+	padding: 5px 10px;
+	border: 1px solid #cecece;
+	border-bottom: none;
+	background-color: white;
+}
+
+.navigation ul li a:hover {
+  text-decoration: underline;
+}
+
+a, a:visited {
+	color: #001a9d;
+}
+
+.left_column {
+	float: left;
+	width: 600px;
+	margin-right: 30px;
+}
+
+.right_column {
+	float: left;
+	width: 210px;
+}
+
+.sidebar {
+	margin-top: -10px;
+	background-color: #ffe;
+	border-left: 1px solid #cecece;
+	border-right: 1px solid #cecece;
+	min-height: 200px;
+	padding: 5px;
+}
