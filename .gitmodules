@@ -1,0 +1,9 @@
+[submodule "framework/merb-core"]
+	path = framework/merb-core
+	url = git://github.com/wycats/merb-core.git
+[submodule "framework/merb-more"]
+	path = framework/merb-more
+	url = git://github.com/wycats/merb-more.git
+[submodule "framework/merb-plugins"]
+	path = framework/merb-plugins
+	url = git://github.com/wycats/merb-plugins.git
