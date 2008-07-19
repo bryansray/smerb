@@ -1,0 +1,1 @@
+Smerb is my first attempt at a web log using the Merb framework.
