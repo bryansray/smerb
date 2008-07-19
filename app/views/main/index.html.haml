@@ -1,0 +1,69 @@
+.left_column{ :style => "width: 400px;"}
+  #about_box.box
+    %h3 Communication
+  
+    %img{ :src => "/images/icons/forward_mail_48x48.png", :style => "float: left; margin-right: 10px" }
+    %p Communication is the key to building any solid relationship. It's no different when it comes to the development process.
+    %p 
+      Being a 
+      %strong well rounded, pragmatic,
+      and 
+      %strong agile developer 
+      is all about effectively communicating with customers, teammates, and the communities you're involved in.
+
+    %h3 Development
+
+    %img{ :src => "/images/icons/categories_48x48.png", :style => "float: left; margin-right: 10px" }
+    %p 
+      Building good software is not always easy, but implementing 
+      <a href="http://agilemanifesto.org/" target="_new">agile practices</a> with the <a href="http://www.ruby-lang.org/en/" target="_new">Ruby language</a> and 
+      the <a href="http://rubyonrails.org" target="_new">Rails framework</a> can greatly simplify the process.
+    %p 
+      I'm a big proponent of developing good software using Behavior Driven Development  and writing specs every step of the way. Giving you the confidence you need to change or add to your application in the future without breaking existing functionality.
+
+    %h3 Iteration
+
+    %img{ :src => "/images/icons/refresh_48x48.png", :style => "float: left; margin-right: 10px" }
+    %p Short iterations give you the distinct advantage of immediate feedback. Allowing you, the customer, to watch your application grow from the ground up and steer it in the right direction if things are not being put together how you imagined.
+
+.right_column{ :style => "width: 430px;"}
+  #post_box
+    %span.view_all= link_to "View All", url(:posts)
+    %h3 My Latest Thoughts
+    .posts
+      - @posts.each do |post|
+        .post.clearfix{ :id => "post_#{post.id}" }
+          .title= link_to post.title, url(:post, post)
+          .meta 
+            Posted on 
+            = post.published_at.display
+
+  #tool_box.clearfix
+    .content
+      %h6 Ruby on Rails
+      %img{ :src => "/images/rails.png", :style => "float: right; margin: 5px;"}
+      %p 
+        %i 
+          "Ruby on Rails is an open-source web framework that is optimized for programmer happiness and sustainable
+          productivity. It allows the developer to write beautiful code by favoring convention over configuration."
+
+      %h6 Merb
+      %img{ :src => "/images/merb.jpg", :style => "float: right; width: 120px; border: 1px solid #cecece; margin: 5px;"}
+      %p
+        %i
+          "Merb is an MVC framework that is ORM-agnostic, JavaScript library agnostic, and template language 
+          agnostic, preferring plugins that add in support for a particular feature rather than trying to produce 
+          a monolithic library with everything in the core. In fact, this is a guiding principle of the project, 
+          which has led to third-party support for the ActiveRecord, DataMapper, and Sequel ORMs."
+  
+      %h6 RSpec
+      %p
+        %i
+          "RSpec is a Behavior Driven Development framework for the Ruby language. It provides two frameworks for
+          writing and executing examples of how your Ruby application should behave."
+
+      %h6 Agile Development
+      %p 
+        %i
+          "Agile Software Development is a methodology for software development that promotes development 
+          iterations, open collaboration, and adaptability throughout the life-cycle of the project."
