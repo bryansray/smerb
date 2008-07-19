@@ -6,13 +6,48 @@
         
 		<title>BryanRay.NET - Pragmatic, Agile, Ruby on Rails, Developer</title>
 		
-		<%= css_include_tag 'clearfixes', 'ie6', 'resets', 'master' %>
+		<%= css_include_tag 'clearfixes', 'ie6', 'resets', 'master', 'typography' %>
+		<%= css_include_tag 'framework' %>
 		
-		<%= js_include_tag 'application' %>
+		<%= js_include_tag 'application', 'jquery.js', 'jquery.livequery.js', 'lowpro.jquery.js' 'jquery.ui.all.js' %>
 		<%= include_required_js %>
 	</head>
 	
     <body>
-        <%= catch_content :for_layout %>
+        <div class="outer">
+    		<div class="header">
+    			<div class="logo">
+    				<img src="/images/bryanray-logo-with-badge.png" />
+    			</div>
+    		</div>
+		
+    		<div class="navigation">
+    			<div class="wrapper clearfix">
+    				<ul>
+    					<li class="current"><%= link_to "Home", url(:root) %></li>
+    					<li><a href="#">Projects</a></li>
+    					<li><%= link_to "Blogs", "/" %></li>
+    					<li><a href="#">About Me</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    		
+    		<div class="wrapper">
+    			<div class="inner clearfix">
+                    <%= catch_content :for_layout %>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>This site is <strong>powered</strong> by 
+                    <a href="https://manage.slicehost.com/customers/new?referrer=2204107130" target="_new">Slicehost</a>,
+                    <a href="http://merbivore.com" target="_new">Merb</a>, 
+                    <a href="http://datamapper.org" target="_new">DataMapper</a>, 
+                    <a href="http://jquery.com">jQuery</a>,
+                    <a href="http://haml.hamptoncatlin.com/" target="_new">haml</a>, 
+                    <a href="http://rspec.info" target="_new">RSpec</a>, 
+                    <a href="http://mountaindew.com" target="_new">Mountain Dew</a>, and a <a href="http://en.wikipedia.org/wiki/Sleep_deprivation" target="_new">lack of sleep</a>.</p>
+            </div>
+        </div>
     </body>
 </html>
