@@ -35,15 +35,21 @@ body {
 #post_box .post {
 	border-bottom: 1px solid #cecece;
 	padding: 10px;
+	margin-bottom: 0;
 }
 
-#post_box .post .title {
-	margin-bottom: 5px;
+.post {
+	margin-bottom: 2.5em;
 }
 
-#post_box .post .meta {
-	float: right;
+.post .meta {
 	color: #cecece;
+	margin-bottom: 10px;
+}
+
+#post_box .meta {
+	float: right;
+	margin-bottom: 0;
 }
 
 #post_box .post:hover {
