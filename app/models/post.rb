@@ -5,6 +5,7 @@ class Post
   property :id, Serial
   property :title, Text
   property :text, Text
+  property :format, String, :default => "Textile"
   property :user_id, Integer
   property :published_at, DateTime
   property :created_at, DateTime
@@ -31,6 +32,11 @@ class Post
   #     transitions :from => :published, :to => :unpublished
   #   end
   # end
+  
+  def to_html
+    red_cloth = RedCloth.new text
+    red_cloth.to_html
+  end
 end
 
 Post.auto_migrate!
