@@ -1,0 +1,9 @@
+.post
+  %h3= link_to post.title, url(:post, post)
+  .meta
+    Posted by
+    %strong Bryan Ray 
+    on 
+    = post.published_at.display
+  .content
+    = post.to_html
