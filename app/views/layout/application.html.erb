@@ -23,11 +23,19 @@
 		
     		<div class="navigation">
     			<div class="wrapper clearfix">
-    				<ul>
+    				<ul class="main">
     					<li class="current"><%= link_to "Home", url(:root) %></li>
     					<li><a href="#">Projects</a></li>
     					<li><%= link_to "Posts", url(:posts) %></li>
     					<li><a href="#">About Me</a></li>
+    				</ul>
+    				
+    				<ul class="secondary">
+    				    <% if logged_in? %>
+    				        <li><%= link_to "Login", url(:login) %></li>
+    				    <% else %>
+    				        <li><%= link_to "Logout", url(:logout) %></li>
+    				    <% end %>
     				</ul>
     			</div>
     		</div>

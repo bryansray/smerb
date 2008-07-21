@@ -1,14 +1,20 @@
-<% form_tag :action => url(:login) do -%>
-<p><label for="email">Email</label><br/>
-<%= text_field :name => "email" %></p>
+<div class="left_column" style="width: 300px">
+    <% form_tag :action => url(:login) do -%>
+        <p><label for="email">Email</label>
+        <%= text_field :name => "email" %></p>
 
-<p><label for="password">Password</label><br/>
-<%= password_field :name => "password" %></p>
+        <p><label for="password">Password</label>
+        <%= password_field :name => "password" %></p>
 
-<!-- Uncomment this if you want this functionality
-<p><label for="remember_me">Remember me:</label>
-<%= checkbox_field :name => 'remember_me' %></p>
--->
+        <!-- Uncomment this if you want this functionality
+        <p><label for="remember_me">Remember me:</label>
+        <%= checkbox_field :name => 'remember_me' %></p>
+        -->
 
-<p><%= submit_button 'Log in' %></p>
-<% end -%>
+        <p><%= submit_button 'Log in' %></p>
+    <% end -%>
+</div>
+
+<div class="right_column" style="width: 200px">
+    Don't have an account yet? <%= link_to "Create one for FREE", url(:signup) %>!
+</div>
