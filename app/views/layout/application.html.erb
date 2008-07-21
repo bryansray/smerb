@@ -32,9 +32,9 @@
     				
     				<ul class="secondary">
     				    <% if logged_in? %>
-    				        <li><%= link_to "Login", url(:login) %></li>
-    				    <% else %>
     				        <li><%= link_to "Logout", url(:logout) %></li>
+    				    <% else %>
+    				        <li><%= link_to "Login", url(:login) %></li>
     				    <% end %>
     				</ul>
     			</div>
