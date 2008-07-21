@@ -56,6 +56,12 @@ body {
 	background-color: #efefef;
 }
 
+#post_box .actions {
+	text-align: right;
+	margin-top: 5px;
+	padding: 5px;
+}
+
 /***** POSTS *****/
 label {
 	background-color: #eaf3fa;
@@ -68,9 +74,36 @@ label {
 }
 
 /***** FORMS *****/
-input[type=text], input[type=password] {
+textarea, input[type=text], input[type=password] {
 	display: block;
 	font-size: 12pt;
 	margin: 5px;
 	padding: 3px;
+}
+
+textarea {
+	width: 90%;
+}
+
+/***** WIDGETS *****/
+.widget {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin-bottom: 1em;
+	border: 1px solid #cecece;
+}
+
+.widget > .content {
+	padding: .5em 1em;
+}
+
+.widget > h6, .widget > h5, .widget > h4 {
+	background: #EAF3FA;
+	padding-left: .5em;
+	border-bottom: 1px solid #cecece;
+}
+
+.widget .actions {
+	background-color: #efefef;
+	border-top: 1px solid #cecece;
 }

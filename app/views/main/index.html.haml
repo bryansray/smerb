@@ -37,6 +37,9 @@
           .meta 
             Posted on 
             = post.published_at.display
+      - if logged_in?
+        .actions
+          = link_to "New Page", url(:new_post)
 
   #tool_box.clearfix
     .content

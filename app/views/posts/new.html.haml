@@ -1,7 +1,25 @@
 - form_for(:post, :action => url(:post), :method => :post) do 
   .left_column
-    =text_control :title, :label => 'Title'
-    =text_area_control :text, :label => 'Body'
+    = text_control :title, :label => 'Title'
+    = text_area_control :text, :label => 'Body', :rows => "10"
   
   .right_column
-    
+    .widget
+      %h6 Status
+      
+      .content
+        %h6 Current Status
+        %select#post_state{ :name => "post[state]" }
+          %option{ :value => "unpublished" } Draft
+          %option{ :value => "unpublished" } Published
+          
+      .content
+        %h6 Viewable By
+        
+        %select
+          %option Anyone
+          %option Members Only
+          %option Only Me
+
+      .content.actions
+        = submit_button "Create"
