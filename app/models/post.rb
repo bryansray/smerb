@@ -5,6 +5,7 @@ class Post
   property :id, Serial
   property :title, Text
   property :text, Text
+  property :slug, Text
   property :format, String, :default => "Textile"
   property :user_id, Integer
   property :published_at, DateTime
@@ -16,6 +17,8 @@ class Post
   
   # Validations
   validates_present :title, :text
+  
+  before :save, :set_slug
   
   # # State
   # is :state_machine, :initial => :new, :column => :status do
@@ -37,6 +40,13 @@ class Post
     red_cloth = RedCloth.new text
     red_cloth.to_html
   end
+  
+  def to_param
+    slug
+  end
+  
+  private
+  def set_slug
+    self.slug = self.title.gsub(/[^a-zA-Z0-9 ]/, "").gsub(/[ ]+/, " ").gsub(/ /, "-").downcase
+  end
 end
-
-Post.auto_migrate!

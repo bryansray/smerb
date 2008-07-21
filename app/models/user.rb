@@ -9,6 +9,8 @@ class User
   property :id,                         Integer,  :serial   => true
   property :login,                      String,   :nullable => false, :length => 3..40, :unique => true
   property :email,                      String,   :nullable => false, :unique => true
+  property :first_name,                 String
+  property :last_name,                  String
   property :created_at,                 DateTime
   property :updated_at,                 DateTime
   property :activated_at,               DateTime
