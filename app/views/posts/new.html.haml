@@ -1,0 +1,7 @@
+- form_for(:post, :action => url(:post), :method => :post) do 
+  .left_column
+    =text_control :title, :label => 'Title'
+    =text_area_control :text, :label => 'Body'
+  
+  .right_column
+    

@@ -31,12 +31,17 @@ body {
 	padding: 10px;
 }
 
-.navigation {
+.footer, .navigation {
 	background-color: #efefef;
 	padding: 10px 0px 1px 0px;
 	border-bottom: 1px solid #cecece;
 	border-top: 1px solid #cecece;
 	font-size: 10pt;
+}
+
+.navigation .secondary {
+	float: right;
+	font-size: 9pt;
 }
 
 .navigation ul {
@@ -50,11 +55,11 @@ body {
   margin: 5px;
 }
 
-.navigation ul li.current a {
+.navigation ul.main li.current a {
 	font-weight: bold;
 }
 
-.navigation ul li a {
+.navigation ul.main li a {
   text-decoration: none;
 	padding: 5px 10px;
 	border: 1px solid #cecece;
@@ -62,7 +67,7 @@ body {
 	background-color: white;
 }
 
-.navigation ul li a:hover {
+.navigation ul.main li a:hover {
   text-decoration: underline;
 }
 

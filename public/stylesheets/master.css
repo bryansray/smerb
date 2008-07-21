@@ -43,7 +43,7 @@ body {
 }
 
 .post .meta {
-	color: #cecece;
+	color: #bbb;
 	margin-bottom: 10px;
 }
 
@@ -54,4 +54,23 @@ body {
 
 #post_box .post:hover {
 	background-color: #efefef;
+}
+
+/***** POSTS *****/
+label {
+	background-color: #eaf3fa;
+	cursor: pointer;
+	display: block;
+	font-size: 12pt;
+	font-weight: bold;
+	margin-bottom: 3px;
+	padding: 7px 6px;
+}
+
+/***** FORMS *****/
+input[type=text], input[type=password] {
+	display: block;
+	font-size: 12pt;
+	margin: 5px;
+	padding: 3px;
 }
