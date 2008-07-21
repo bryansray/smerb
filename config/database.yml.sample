@@ -1,15 +1,15 @@
 ---
 development: &defaults
   adapter: mysql
-  database: merblog_development
+  database: smerb_development
   username: root
   password: 
   host: localhost
 
 test:
   <<: *defaults
-  database: merblog_test
+  database: smerb_test
 
 production:
   <<: *defaults
-  database: merblog_production
+  database: smerb_production
