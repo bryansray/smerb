@@ -71,7 +71,7 @@ dependency "merb_helpers"
 dependency "dm-validations"
 dependency "dm-timestamps"
 dependency "dm-aggregates"
-# dependency "dm-is-state_machine"
+dependency "dm-is-state_machine"
 
 Merb::BootLoader.before_app_loads do 
   Merb::Slices::config[:merb_auth][:layout] = :application 
@@ -81,6 +81,19 @@ Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
 
   # dependency "magic_admin" # this gem uses the app's model classes
+  
+  # Never lose MySQL connection
+  Thread.new do
+    while(true)
+      begin
+        repository.adapter.query('select 1')
+      rescue
+        logger.warn { 'Connection to database lost, will reconnect in 60 seconds.' }
+      ensure
+        sleep(60)
+      end
+    end
+  end
 end
 
 #
