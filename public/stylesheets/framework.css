@@ -37,6 +37,11 @@ body {
 	border-bottom: 1px solid #cecece;
 	border-top: 1px solid #cecece;
 	font-size: 10pt;
+	height: 26px;
+}
+
+.navigation .main {
+	float: left;
 }
 
 .navigation .secondary {
@@ -45,26 +50,30 @@ body {
 }
 
 .navigation ul {
+	text-align: left; /* set to left, right or center */
 	list-style-type: none;
-  padding: 0;
-  margin: 0;
+	margin-top: 8px;
 }
 
 .navigation ul li {
-  float: left;
-  margin: 5px;
+  display: inline;
 }
 
 .navigation ul.main li.current a {
 	font-weight: bold;
 }
 
+.navigation ul li a {
+	position: relative;
+}
+
 .navigation ul.main li a {
-  text-decoration: none;
-	padding: 5px 10px;
-	border: 1px solid #cecece;
+	padding: 5px 10px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+	border: 1px solid #cecece; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+	background-color: #fff; /* set unselected tab background color as desired */
+	margin-right: 0px; /* set additional spacing between tabs as desired */
+	text-decoration: none;
 	border-bottom: none;
-	background-color: white;
 }
 
 .navigation ul.main li a:hover {

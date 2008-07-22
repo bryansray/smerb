@@ -32,6 +32,7 @@ body {
 }
 #post_box .view_all {
 	float: right; 
+	margin-top: 7px;
 }
 
 #post_box .post {
