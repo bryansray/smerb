@@ -7,6 +7,7 @@ class Post
   property :text, Text
   property :slug, Text
   property :format, String, :default => "Textile"
+  property :status, String, :default => 'new'
   property :user_id, Integer
   property :published_at, DateTime
   property :created_at, DateTime
