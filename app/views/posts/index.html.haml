@@ -1,3 +1,6 @@
+- throw_content :for_head do
+  %link{ :rel => 'alternate', :type => 'application/rss+xml', :title => 'RSS', :href => '/feeds.xml' }
+
 .left_column
   - @posts.each do |post|
     = partial :post, :post => post
