@@ -33,7 +33,7 @@
     .posts
       - @posts.each do |post|
         .post.clearfix{ :id => "post_#{post.id}" }
-          = link_to post.title, url(:post, post)
+          = link_to post.title, url(:slug, :year => post.published_at.year, :month => post.published_at.month, :day => post.published_at.day, :slug => post.slug)
           .meta 
             Posted on 
             = post.published_at.display

@@ -1,5 +1,5 @@
 .post
-  %h3= link_to post.title, url(:post, post)
+  %h3= link_to post.title, url(:slug, :year => post.published_at.year, :month => post.published_at.month, :day => post.published_at.day, :slug => post.slug)
   .meta
     Posted by
     %strong Bryan Ray 
