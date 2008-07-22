@@ -7,7 +7,7 @@ class Post
   property :text, Text
   property :slug, Text
   property :format, String, :default => "Textile"
-  property :status, String, :default => 'new'
+  # property :status, String, :default => 'new'
   property :user_id, Integer
   property :published_at, DateTime
   property :created_at, DateTime
@@ -21,21 +21,21 @@ class Post
   
   before :save, :set_slug
   
-  # # State
-  # is :state_machine, :initial => :new, :column => :status do
-  #   state :new
-  #   state :published
-  #   state :unpublished
-  #   
-  #   event :publish do
-  #     transitions :from => :new, :to => :published
-  #     transitions :from => :unpublished, :to => :published
-  #   end
-  #   
-  #   event :unpublish do
-  #     transitions :from => :published, :to => :unpublished
-  #   end
-  # end
+  # State
+  is :state_machine, :initial => :new, :column => :status do
+    state :new
+    state :published
+    state :unpublished
+    
+    event :publish do
+      transitions :from => :new, :to => :published
+      transitions :from => :unpublished, :to => :published
+    end
+    
+    event :unpublish do
+      transitions :from => :published, :to => :unpublished
+    end
+  end
   
   def to_html
     red_cloth = RedCloth.new text
