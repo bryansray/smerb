@@ -37,7 +37,7 @@
           .meta 
             Posted on 
             = post.published_at.display
-      - if logged_in?
+      - if logged_in? && current_user.admin?
         .actions
           = link_to "New Page", url(:new_post)
 

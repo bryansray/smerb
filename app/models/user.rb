@@ -20,6 +20,8 @@ class User
   property :remember_token_expires_at,  DateTime
   property :remember_token,             String
   property :password_reset_key,         String, :writer => :protected
+  
+  property :admin, Boolean, :default => false
 
   # Validations
   validates_is_unique :password_reset_key, :if => Proc.new{|m| !m.password_reset_key.nil?}
