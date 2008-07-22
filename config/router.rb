@@ -23,6 +23,7 @@ Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
   # RESTful routes
   r.resources :posts, { :keys => [:slug] }
+  r.resources :feeds
   
   r.add_slice(:MerbAuth, :path => '', :default_routes => false)
 
@@ -34,5 +35,5 @@ Merb::Router.prepare do |r|
   
   # Change this for your home page to be available at /
   r.match('/').to(:controller => 'main', :action =>'index').name(:root)
-  r.match('/:year/:month/:day/:slug').to(:controller => 'posts', :action => 'show')
+  r.match('/:year/:month/:day/:slug').to(:controller => 'posts', :action => 'show').name(:slug)
 end
