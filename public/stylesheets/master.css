@@ -1,3 +1,5 @@
+/* @override http://localhost:4000/stylesheets/master.css */
+
 body {
   background-color: #fff;
 }
@@ -16,7 +18,7 @@ body {
 
 /***** TOOL BOX *****/
 #tool_box {
-	background-color: #ffe;
+	background-color: #fff3f3;
 	border: 1px solid #cecece;
 }
 
