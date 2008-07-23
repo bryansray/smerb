@@ -126,10 +126,34 @@ a.xml_feed {
 	padding: 8px 0;
 	padding-left: 40px;
 	border: 1px solid transparent;
+	margin-bottom: 10px;
 	background: transparent url(/images/icons/feed_24x24.png) no-repeat 6px 1px;
 }
 
 a.xml_feed:hover {
 	border: 1px solid #acd;
 	background-color: #CDE0FF;
+}
+
+/***** COMMENTS *****/
+#comment_box h4 {
+	border-bottom: 1px solid #cecece;
+}
+
+#comment_box .comment {
+	margin-bottom: 15px;
+}
+
+#comment_box .meta {
+	margin-bottom: 5px;
+	color: #222;
+	line-height: 1.4em;
+}
+
+#comment_box .meta .author {
+	font-weight: bold;
+}
+
+#comment_box .comment .text {
+	margin-left: 10px;
 }

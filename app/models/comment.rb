@@ -14,4 +14,9 @@ class Comment
   belongs_to :post
   
   validates_present :author, :email, :text
+  
+  def to_html
+    red_cloth = RedCloth.new text
+    red_cloth.to_html
+  end
 end

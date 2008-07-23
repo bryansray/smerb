@@ -1,1 +1,16 @@
-= partial :post, :post => @post
+.left_column
+  = partial :post, :post => @post
+  
+.right_column.sidebar
+  = link_to "XML Feed", url(:feeds, :format => :xml), :class => "xml_feed"
+  
+  #comment_box.comments
+    %h4 Comments
+    - @post.comments.each do |comment|
+      .comment{ :id => "comment_#{comment.id}"}
+        .meta
+          %span.author= link_to comment.author, comment.url, :target => "_new"
+          commented on
+          %span.date= comment.created_at.display
+        .text
+          = comment.to_html

@@ -15,6 +15,7 @@ class Post
   
   # Associations
   belongs_to :user
+  has n, :comments
   
   # Validations
   validates_present :title, :text
