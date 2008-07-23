@@ -6,4 +6,4 @@
     = partial :post, :post => post
 
 .right_column.sidebar
-  %h3 Sidebar
+  = link_to "XML Feed", url(:feeds, :format => :xml), :class => "xml_feed"

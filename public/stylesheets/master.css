@@ -50,9 +50,18 @@ body {
 	margin-bottom: 10px;
 }
 
+.post .actions {
+	margin: 10px 0;
+	padding: 5px;
+	background-color: #efefef;
+	border: 1px solid #cecece;
+	font-size: 8pt;
+}
+
 #post_box .meta {
 	float: right;
 	margin-bottom: 0;
+	margin-top: 10px;
 }
 
 #post_box .post:hover {
@@ -109,4 +118,18 @@ textarea {
 .widget .actions {
 	background-color: #efefef;
 	border-top: 1px solid #cecece;
+}
+
+/***** FEED *****/
+a.xml_feed {
+	display: block;
+	padding: 8px 0;
+	padding-left: 40px;
+	border: 1px solid transparent;
+	background: transparent url(/images/icons/feed_24x24.png) no-repeat 6px 1px;
+}
+
+a.xml_feed:hover {
+	border: 1px solid #acd;
+	background-color: #CDE0FF;
 }
