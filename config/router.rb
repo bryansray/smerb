@@ -22,7 +22,7 @@
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
   # RESTful routes
-  r.resources :posts, { :keys => [:slug] }
+  r.resources :posts
   r.resources :feeds
   
   r.add_slice(:MerbAuth, :path => '', :default_routes => false)

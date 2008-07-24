@@ -4,6 +4,12 @@
 .right_column.sidebar
   = link_to "XML Feed", url(:feeds, :format => :xml), :class => "xml_feed"
   
+  - if logged_in?
+    #action_box.actions
+      = link_to "New Post", url(:new_post), :class => "new_post"
+      = link_to "Edit Post", url(:edit_post, @post.id), :class => "edit_post"
+    
+  
   #comment_box.comments
     %h4 Comments
     - @post.comments.each do |comment|

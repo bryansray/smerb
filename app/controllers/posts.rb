@@ -24,4 +24,19 @@ class Posts < Application
     end
   end
   
+  def edit
+    @post = Post.get params[:id]
+    render
+  end
+  
+  def update
+    @post = Post.get params[:id]
+
+    if @post.update_attributes params[:post]
+      redirect url(:slug, :year => @post.published_at.year, :month => @post.published_at.month, :day => @post.published_at.day, :slug => @post)
+    else
+      render :action => :edit
+    end
+  end
+  
 end

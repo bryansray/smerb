@@ -38,6 +38,10 @@ class Post
     end
   end
   
+  def text
+    attribute_get(:text).gsub("\n", "")
+  end
+  
   def to_html
     red_cloth = RedCloth.new text
     red_cloth.to_html

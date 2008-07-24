@@ -1,4 +1,4 @@
-- form_for(:post, :action => url(:post), :method => :post) do 
+- form_for(:post, :action => url(:post, @post.id)) do 
   .left_column
     = text_control :title, :label => 'Title'
     = text_area_control :text, :label => 'Body', :rows => "10"
@@ -20,4 +20,4 @@
           %option Only Me
 
       .content.actions
-        = submit_button "Create"
+        = submit_button "Save"
