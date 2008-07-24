@@ -85,6 +85,11 @@ label {
 	padding: 7px 6px;
 }
 
+pre {
+	margin-left: 10px;
+	margin-bottom: 15px;
+}
+
 /***** FORMS *****/
 textarea, input[type=text], input[type=password] {
 	display: block;
@@ -93,8 +98,14 @@ textarea, input[type=text], input[type=password] {
 	padding: 3px;
 }
 
-textarea {
-	width: 90%;
+input#post_title {
+	width: 580px;
+}
+
+textarea#post_text {
+	width: 97%;
+	font-size: 9pt;
+	height: 250px;
 }
 
 /***** WIDGETS *****/
@@ -135,6 +146,27 @@ a.xml_feed:hover {
 	background-color: #CDE0FF;
 }
 
+/***** ACTIONS *****/
+#action_box a {
+	display: block;
+	padding: 8px 0;
+	padding-left: 40px;
+	border: 1px solid transparent;
+}
+
+#action_box a.edit_post {
+	background: transparent url(/images/icons/edit_16x16.png) no-repeat 10px 5px;
+}
+
+#action_box a.new_post {
+	background: transparent url(/images/icons/entry_alt_16x16.png) no-repeat 10px 6px;
+}
+
+#action_box a:hover {
+	border: 1px solid #acd;
+	background-color: #CDE0FF;
+}
+
 /***** COMMENTS *****/
 #comment_box h4 {
 	border-bottom: 1px solid #cecece;
@@ -156,4 +188,14 @@ a.xml_feed:hover {
 
 #comment_box .comment .text {
 	margin-left: 10px;
+}
+
+/***** POSTS *****/
+.post .content ul, .post .content ol {
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
+.post .content li {
+	margin-bottom: 10px;
 }
