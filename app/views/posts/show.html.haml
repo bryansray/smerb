@@ -23,10 +23,9 @@
     #action_box.actions
       = link_to "New Post", url(:new_post), :class => "new_post"
       = link_to "Edit Post", url(:edit_post, @post.id), :class => "edit_post"
-    
-  
+
+  = link_to "Add Comment", "#comment_form", :rel => "facebox", :class => "add_comment"
   #comment_box.comments
-    = link_to "Add Comment", "#comment_form", :rel => "facebox"
     %h4 Comments
     - @post.comments.each do |comment|
       = partial 'comments/comment', :comment => comment
