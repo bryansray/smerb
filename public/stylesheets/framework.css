@@ -31,7 +31,7 @@ body {
 	padding: 10px;
 }
 
-.footer, .navigation {
+.wrapper .footer, .navigation {
 	background-color: #efefef;
 	padding: 10px 0px 1px 0px;
 	border-bottom: 1px solid #cecece;
@@ -86,7 +86,7 @@ a, a:visited {
 
 .left_column {
 	float: left;
-	width: 600px;
+	width: 570px;
 	margin-right: 30px;
 }
 
@@ -102,5 +102,8 @@ a, a:visited {
 	border-right: 1px solid #cecece;
 	border-bottom: 1px solid #cecece;
 	min-height: 200px;
-	padding: 5px;
+	padding: 10px;
+	width: 235px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
 }
