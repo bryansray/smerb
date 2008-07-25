@@ -1,7 +1,8 @@
 class Comment
   include DataMapper::Resource
-  
-  property :post_id, Serial
+
+  property :id, Serial
+  property :post_id, Integer
   property :author, String
   property :email, Text
   property :url, Text

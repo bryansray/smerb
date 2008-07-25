@@ -1,3 +1,18 @@
+- require_js 'comments'
+
+.comment_form#comment_form{ :style => "display: none;" }
+  - form_for Comment.new, :action => url(:comments) do
+    = hidden_control :post_id, :value => @post.id
+    = text_control :author, :label => "Name"
+    = text_control :email, :label => "Email"
+    = text_control :url, :label => "URL"
+    
+    = text_area_control :text, :label => "Comment (Textile enabled)"
+    
+    .small_spinner
+    .comment_waiting
+    = submit_button "Create Comment", :class => "submit_comment"
+
 .left_column
   = partial :post, :post => @post
   
@@ -11,12 +26,7 @@
     
   
   #comment_box.comments
+    = link_to "Add Comment", "#comment_form", :rel => "facebox"
     %h4 Comments
     - @post.comments.each do |comment|
-      .comment{ :id => "comment_#{comment.id}"}
-        .meta
-          %span.author= link_to comment.author, comment.url, :target => "_new"
-          commented on
-          %span.date= comment.created_at.display
-        .text
-          = comment.to_html
+      = partial 'comments/comment', :comment => comment

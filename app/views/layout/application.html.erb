@@ -7,9 +7,10 @@
 		<title>BryanRay.NET - Pragmatic, Agile, Ruby on Rails, Developer</title>
 		
 		<%= css_include_tag 'clearfixes', 'ie6', 'resets', 'master', 'typography' %>
-		<%= css_include_tag 'framework' %>
+		<%= css_include_tag 'framework', '/javascripts/facebox/facebox.css' %>
 		
-		<%= js_include_tag 'application', 'jquery.js', 'lowpro.jquery.js', 'jquery.livequery.js', 'jquery.ui.all.js' %>
+		<%= js_include_tag 'jquery.js', 'lowpro.jquery.js', 'jquery.livequery.js' %>
+		<%= js_include_tag 'application', 'facebox/facebox.js' %>
 		<%= include_required_js %>
 		
 		<%= catch_content :for_head %>
