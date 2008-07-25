@@ -24,6 +24,7 @@ Merb::Router.prepare do |r|
   # RESTful routes
   r.resources :posts
   r.resources :feeds
+  r.resources :comments
   
   r.add_slice(:MerbAuth, :path => '', :default_routes => false)
 
