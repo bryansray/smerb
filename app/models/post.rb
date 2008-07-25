@@ -39,7 +39,7 @@ class Post
   end
   
   def text
-    attribute_get(:text).gsub("\n", "")
+    attribute_get(:text).gsub("\n", "") unless attribute_get(:text).nil?
   end
   
   def to_html
