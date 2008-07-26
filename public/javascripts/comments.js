@@ -4,7 +4,6 @@ $(document).ready(function($){
 
 CommentForm = $.klass(Remote.Form, {
 	initialize: function($super, options) {	
-		console.info("Attaching ...");
 		this.submit_button = $(".submit_comment", this.element);
 		this.submit_text = this.submit_button.text();
 		
