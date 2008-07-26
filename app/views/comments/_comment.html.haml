@@ -2,6 +2,8 @@
   .meta
     %span.author= link_to comment.author, comment.url, :target => "_new"
     commented on
-    %span.date= comment.created_at.display
+    %span.date= comment.created_at.display_date
+    at
+    %span.time= comment.created_at.display_time
   .text
     = comment.to_html

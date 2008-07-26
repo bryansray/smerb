@@ -36,7 +36,9 @@
           = link_to post.title, url(:slug, :year => post.published_at.year, :month => post.published_at.month, :day => post.published_at.day, :slug => post.slug)
           .meta 
             Posted on 
-            = post.published_at.display
+            = post.published_at.display_date
+            at
+            = post.published_at.display_time
       - if logged_in? && current_user.admin?
         .actions
           = link_to "New Page", url(:new_post)
