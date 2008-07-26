@@ -1,7 +1,7 @@
 .comment{ :id => "comment_#{comment.id}"}
-  .meta
-    %span.author= link_to comment.author, comment.url, :target => "_new"
-    commented on
+  .author= link_to comment.author, comment.url, :target => "_new"
+  %span.meta
+    on
     %span.date= comment.created_at.display_date
     at
     %span.time= comment.created_at.display_time
