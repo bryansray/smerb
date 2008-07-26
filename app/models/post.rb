@@ -51,6 +51,10 @@ class Post
     slug
   end
   
+  def published_at
+    attribute_get(:published_at).nil? ? attribute_get(:created_at) : attribute_get(:published_at)
+  end
+  
   private
   def set_slug
     self.slug = self.title.gsub(/[^a-zA-Z0-9 ]/, "").gsub(/[ ]+/, " ").gsub(/ /, "-").downcase
