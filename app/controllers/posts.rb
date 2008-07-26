@@ -3,11 +3,15 @@ class Posts < Application
     
   def index
     @posts = Post.all :status => :published, :limit => 5, :order => [:published_at.desc]
+    @comments = Comment.all :limit => 10, :order => [:created_at.desc]
     render
   end
   
   def show
-    @post = Post.first :slug => params[:slug]
+    datetime = DateTime.new params[:year].to_i, params[:month].to_i, params[:day].to_i
+
+    @post = Post.first :slug => params[:slug], :published_at.gte => datetime if params[:slug]
+    @post = Post.first :slug => params[:id] if params[:id]
     @comments = @post.comments :order => [:created_at.desc]
     render
   end
