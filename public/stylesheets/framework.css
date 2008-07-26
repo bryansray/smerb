@@ -107,3 +107,17 @@ a, a:visited {
 	-moz-border-radius-bottomright: 3px;
 	-moz-border-radius-bottomleft: 3px;
 }
+
+/***** PAGINATION *****/
+.pagination {
+	margin: 10px 0;
+	text-align: right;
+}
+
+.pagination a, .pagination .current {
+	margin: 0 5px;
+}
+
+.pagination_stats {
+	text-align: right;
+}

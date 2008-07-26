@@ -72,6 +72,7 @@ dependency "dm-validations"
 dependency "dm-timestamps"
 dependency "dm-aggregates"
 dependency "dm-is-state_machine"
+dependency "merb_paginate"
 
 Merb::BootLoader.before_app_loads do 
   Merb::Slices::config[:merb_auth][:layout] = :application 

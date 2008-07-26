@@ -1,6 +1,7 @@
 class Post
   include DataMapper::Resource
-
+  include MerbPaginate::Finders::Datamapper
+  
   # Properties
   property :id, Serial
   property :title, Text

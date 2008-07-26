@@ -2,16 +2,18 @@ class Posts < Application
   before :login_required, :only => [:new]
     
   def index
-    @posts = Post.all :status => :published, :limit => 5, :order => [:published_at.desc]
-    @comments = Comment.all :limit => 10, :order => [:created_at.desc]
+    @posts = Post.paginate :page => params[:page], :per_page => 10, :status => :published, :order => [:published_at.desc]
+    @comments = Comment.all :post_id => @posts.collect { |p| p.id }, :limit => 10, :order => [:created_at.desc]
     render
   end
   
   def show
-    datetime = DateTime.new params[:year].to_i, params[:month].to_i, params[:day].to_i
-
-    @post = Post.first :slug => params[:slug], :published_at.gte => datetime if params[:slug]
-    @post = Post.first :slug => params[:id] if params[:id]
+    if params[:slug]
+      datetime = DateTime.new params[:year].to_i, params[:month].to_i, params[:day].to_i
+      @post = Post.first :slug => params[:slug], :published_at.gte => datetime if params[:slug]
+    else
+      @post = Post.first :slug => params[:id] if params[:id]
+    end
     @comments = @post.comments :order => [:created_at.desc]
     render
   end

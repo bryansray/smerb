@@ -2,8 +2,16 @@
   %link{ :rel => 'alternate', :type => 'application/rss+xml', :title => 'RSS', :href => '/feeds.xml' }
 
 .left_column
-  - @posts.each do |post|
-    = partial :post, :post => post
+  = paginated_section @posts do
+    - @posts.each do |post|
+      = partial :post, :post => post
+  .pagination_stats
+    = page_entries_info @posts
 
 .right_column.sidebar
   = link_to "XML Feed", url(:feeds, :format => :xml), :class => "xml_feed"
+  
+  %h4 Recent Comments
+  #comment_box.comments
+    - @comments.each do |comment|
+      = partial 'comments/comment', :comment => comment
