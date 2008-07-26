@@ -25,7 +25,8 @@
       = link_to "Edit Post", url(:edit_post, @post.id), :class => "edit_post"
 
   = link_to "Add Comment", "#comment_form", :rel => "facebox", :class => "add_comment"
+
+  %h4 Comments
   #comment_box.comments
-    %h4 Comments
-    - @post.comments.each do |comment|
+    - @comments.each do |comment|
       = partial 'comments/comment', :comment => comment
