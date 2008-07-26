@@ -8,7 +8,7 @@ class Posts < Application
   
   def show
     @post = Post.first :slug => params[:slug]
-    @comments = @post.comments
+    @comments = @post.comments :order => [:created_at.desc]
     render
   end
   
