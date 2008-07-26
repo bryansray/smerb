@@ -159,7 +159,7 @@ textarea#post_text {
 	border-top: 1px solid #cecece;
 }
 
-/***** FEED *****/
+/***** SIDEBAR *****/
 .sidebar > a {
 	display: block;
 	padding: 8px 0;
@@ -168,17 +168,23 @@ textarea#post_text {
 	margin-bottom: 10px;
 }
 
+.sidebar > a:hover {
+	border: 1px solid #acd;
+	background-color: #CDE0FF;
+}
+
+.sidebar h4 {
+	border-bottom: 1px solid #cecece;
+}
+
+
+/***** FEED *****/
 a.xml_feed {
 	background: transparent url(/images/icons/feed_24x24.png) no-repeat 6px 1px;
 }
 
 a.add_comment {
 	background: transparent url(/images/icons/discussion_16x16.png) no-repeat 12px 7px;
-}
-
-.sidebar > a:hover {
-	border: 1px solid #acd;
-	background-color: #CDE0FF;
 }
 
 /***** ACTIONS *****/
@@ -203,10 +209,6 @@ a.add_comment {
 }
 
 /***** COMMENTS *****/
-#comment_box h4 {
-	border-bottom: 1px solid #cecece;
-}
-
 #comment_box .comment {
 	margin-bottom: 15px;
 }
