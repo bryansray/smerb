@@ -1,4 +1,5 @@
 .comment{ :id => "comment_#{comment.id}"}
+  .post= comment.post.title
   .author= link_to comment.author, comment.url, :target => "_new"
   %span.meta
     on

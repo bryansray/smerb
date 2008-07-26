@@ -227,10 +227,23 @@ a.add_comment {
 	margin-left: 10px;
 }
 
+#comment_box .comment .meta {
+	color: #bbb;
+}
+
 /***** POSTS *****/
 .post .content ul, .post .content ol {
 	margin-left: 30px;
 	margin-bottom: 20px;
+}
+
+.post .content pre {
+	overflow: auto;
+	background: #efefef;
+	border: 1px solid black;
+	font-size: 8pt;
+	margin-top: 5px;
+	padding: 10px;
 }
 
 .post .content li {
