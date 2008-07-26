@@ -1,13 +1,15 @@
+$(document).ready(function($){
+	$("#facebox div.comment_form form").attach(CommentForm);
+});
+
 CommentForm = $.klass(Remote.Form, {
-	initialize: function($super, options) {
-		// The submit button
-		console.info("Initializing the comment form ...");
-		
+	initialize: function($super, options) {	
+		console.info("Attaching ...");
 		this.submit_button = $(".submit_comment", this.element);
 		this.submit_text = this.submit_button.text();
 		
 		this.spinner = $(".small_spinner", this.element);
-		this.result_box = $(".comment_waiting", this.element);
+		this.result_box = $("#comment_box");
 		this.text_area = $("textarea", this.element);
 		
 		$super();
@@ -23,9 +25,11 @@ CommentForm = $.klass(Remote.Form, {
 		this.enable();
 	},
 	
-	success: function() {
-		this.result_box.text("Comment created.").fadeIn(100);
-		this.text_area.val("");
+	success: function(response, status) {
+		this.result_box.prepend(response);
+		var $comment = $("#comment_box :first").hide();
+		
+		$comment.effect('highlight', {}, 6000);
 		$(document).trigger('close.facebox');
 	},
 	
@@ -40,9 +44,4 @@ CommentForm = $.klass(Remote.Form, {
 	enable: function() {
 		this.submit_button.removeAttr('disabled').val(this.submit_text);
 	}
-});
-
-$(document).ready(function($){
-	console.info("Attaching ...");
-	$("div.comment_form form").attach(CommentForm);
 });
