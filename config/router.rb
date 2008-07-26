@@ -35,6 +35,7 @@ Merb::Router.prepare do |r|
   # r.default_routes
   
   # Change this for your home page to be available at /
+  r.match('/feed').to(:controller => 'feeds', :action => 'index', :format => 'xml')
   r.match('/').to(:controller => 'main', :action =>'index').name(:root)
   r.match('/:year/:month/:day/:slug').to(:controller => 'posts', :action => 'show').name(:slug)
 end
