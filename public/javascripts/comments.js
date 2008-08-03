@@ -1,5 +1,5 @@
 $(document).ready(function($){
-	$("#facebox div.comment_form form").attach(CommentForm);
+	$("div.comment_form form").attach(CommentForm);
 });
 
 CommentForm = $.klass(Remote.Form, {
@@ -8,7 +8,7 @@ CommentForm = $.klass(Remote.Form, {
 		this.submit_text = this.submit_button.text();
 		
 		this.spinner = $(".small_spinner", this.element);
-		this.result_box = $("#comment_box");
+		this.result_box = $("#comments");
 		this.text_area = $("textarea", this.element);
 		
 		$super();
@@ -25,11 +25,10 @@ CommentForm = $.klass(Remote.Form, {
 	},
 	
 	success: function(response, status) {
-		this.result_box.prepend(response);
-		var $comment = $("#comment_box :first").hide();
-		
+		var $comment = $(response);
+		this.result_box.prepend($comment);
 		$comment.effect('highlight', {}, 6000);
-		$(document).trigger('close.facebox');
+		this.text_area.val('');
 	},
 	
 	error: function() {

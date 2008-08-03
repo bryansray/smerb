@@ -79,7 +79,6 @@ body {
 	background-color: #eaf3fa;
 	cursor: pointer;
 	display: block;
-	font-size: 12pt;
 	font-weight: bold;
 	margin-bottom: 3px;
 	padding: 7px 6px;
@@ -109,15 +108,21 @@ textarea#post_text {
 }
 
 /***** COMMENT BOX *****/
+.comment_form {
+	margin-bottom: 15px;
+	padding: 10px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+
 .comment_form label {
 	font-weight: bold;
 	background-color: #eaf3fa;
 	border: 1px solid #a6ccf3;
 	float: left;
 	margin-right: 10px;
-	margin-top: 3px;
 	padding: 5px;
-	width: 50px;
+	width: 130px;
 }
 
 .comment_form label[for=comment_text] {
@@ -133,7 +138,7 @@ textarea#post_text {
 }
 
 .comment_form input {
-	font-size: 10pt;
+	font-size: 8pt;
 }
 
 /***** WIDGETS *****/
@@ -209,8 +214,14 @@ a.add_comment {
 }
 
 /***** COMMENTS *****/
+.comments {
+	padding: 10px;
+}
+
 #comment_box .comment {
 	margin-bottom: 15px;
+	border-left: 2px solid #eee;
+	padding-left: 15px;
 }
 
 #comment_box .meta {
@@ -229,6 +240,10 @@ a.add_comment {
 
 #comment_box .comment .meta {
 	color: #bbb;
+}
+
+#comment_box h4 {
+	border-bottom: 1px solid #ddd;
 }
 
 /***** POSTS *****/

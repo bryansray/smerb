@@ -1,20 +1,45 @@
 - require_js 'comments'
 
-.comment_form#comment_form{ :style => "display: none;" }
-  - form_for Comment.new, :action => url(:comments) do
-    = hidden_control :post_id, :value => @post.id
-    = text_control :author, :label => "Name"
-    = text_control :email, :label => "Email"
-    = text_control :url, :label => "URL"
-    
-    = text_area_control :text, :label => "Comment (Textile enabled)"
-    
-    .small_spinner
-    .comment_waiting
-    = submit_button "Create Comment", :class => "submit_comment"
+/ .comment_form#comment_form{ :style => "display: none;" }
+/   - form_for Comment.new, :action => url(:comments) do
+/     = hidden_control :post_id, :value => @post.id
+/     = text_control :author, :label => "Name"
+/     = text_control :email, :label => "Email"
+/     = text_control :url, :label => "URL"
+/     
+/     = text_area_control :text, :label => "Comment (Textile enabled)"
+/     
+/     .small_spinner
+/     .comment_waiting
+/     = submit_button "Create Comment", :class => "submit_comment"
 
 .left_column
   = partial :post, :post => @post
+  
+  .comment_box#comment_box
+    %h4 Comments
+    .comment_form#comment_form
+      - form_for Comment.new, :action => url(:comments) do
+        = hidden_control :post_id, :value => @post.id
+        .name.clearfix
+          = text_control :author, :label => "Name"
+        .email.clearfix
+          = text_control :email, :label => "Email (private)"
+        .url.clearfix
+          = text_control :url, :label => "URL"
+
+        .captcha.clearfix
+          = text_control :is_spam, :label => "What is 2 plus 2?", :value => ''
+        .text.clearfix
+          = text_area_control :text, :label => "Comment (Textile enabled)"
+
+        .small_spinner
+        .comment_waiting
+        = submit_button "Create Comment", :class => "submit_comment"
+
+    #comments.comments
+      - @comments.each do |comment|
+        = partial 'comments/comment', :comment => comment
   
 .right_column.sidebar
   = link_to "XML Feed", url(:feeds, :format => :xml), :class => "xml_feed"
@@ -23,10 +48,3 @@
     #action_box.actions
       = link_to "New Post", url(:new_post), :class => "new_post"
       = link_to "Edit Post", url(:edit_post, @post.id), :class => "edit_post"
-
-  = link_to "Add Comment", "#comment_form", :rel => "facebox", :class => "add_comment"
-
-  %h4 Comments
-  #comment_box.comments
-    - @comments.each do |comment|
-      = partial 'comments/comment', :comment => comment
