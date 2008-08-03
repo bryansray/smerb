@@ -17,7 +17,7 @@ class Post
   # Associations
   belongs_to :user
   has n, :comments
-  has n, :valid_comments, :class_name => 'Comment' :is_spam => false
+  has n, :valid_comments, :class_name => 'Comment', :is_spam => false
   
   # Validations
   validates_present :title, :text
