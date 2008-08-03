@@ -23,7 +23,6 @@ class Comment
   end
   
   def is_spam=(value)
-    puts "--- #{value}"
     attribute_set(:is_spam, false) unless value == 4
   end
 end
