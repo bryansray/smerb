@@ -17,6 +17,7 @@ class Post
   # Associations
   belongs_to :user
   has n, :comments
+  has n, :valid_comments, :class_name => 'Comment' :is_spam => false
   
   # Validations
   validates_present :title, :text
@@ -30,12 +31,12 @@ class Post
     state :unpublished
     
     event :publish do
-      transitions :from => :new, :to => :published
-      transitions :from => :unpublished, :to => :published
+      transition :from => :new, :to => :published
+      transition :from => :unpublished, :to => :published
     end
     
     event :unpublish do
-      transitions :from => :published, :to => :unpublished
+      transition :from => :published, :to => :unpublished
     end
   end
   
