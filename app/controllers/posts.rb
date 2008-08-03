@@ -3,7 +3,7 @@ class Posts < Application
     
   def index
     @posts = Post.paginate :page => params[:page], :per_page => 10, :status => :published, :order => [:published_at.desc]
-    @comments = Comment.all :post_id => @posts.collect { |p| p.id }, :limit => 10, :order => [:created_at.desc]
+    @comments = Comment.all :post_id => @posts.collect { |p| p.id }, :is_spam => false, :limit => 10, :order => [:created_at.desc]
     render
   end
   
