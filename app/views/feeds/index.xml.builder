@@ -1,5 +1,5 @@
 xml.instruct!
-xml.rss1 :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom"  do
+xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom"  do
   xml.channel do
     xml.title "BryanRay.NET"
     xml.description "Pragmatic, Agile, Development with a range of technologies from Ruby, Rails, Merb, .NET and others."
