@@ -23,6 +23,7 @@ class Comment
   end
   
   def is_spam=(value)
-    attribute_set(:is_spam, false) unless value == 4
+    is_spam = (value.to_i == 4) ? false : true
+    attribute_set(:is_spam, is_spam)
   end
 end
