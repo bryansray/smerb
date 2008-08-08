@@ -31,9 +31,10 @@
         .text.clearfix
           = text_area_control :text, :label => "Comment (Textile enabled)"
 
-        .small_spinner
-        .comment_waiting
-        = submit_button "Create Comment", :class => "submit_comment"
+        .comment_actions.clearfix
+          = submit_button "Create Comment", :class => "submit_comment"
+          .small_spinner
+            %img{ :src => "/images/dots-white.gif" }
 
     #comments.comments
       - @comments.each do |comment|

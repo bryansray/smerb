@@ -246,6 +246,18 @@ a.add_comment {
 	border-bottom: 1px solid #ddd;
 }
 
+#comment_box .comment_actions {
+	margin-top: 10px;
+}
+.submit_comment {
+	float: left;
+}
+
+.small_spinner {
+	display: none;
+	margin-left: 125px;
+}
+
 /***** POSTS *****/
 .post .content ul, .post .content ol {
 	margin-left: 30px;

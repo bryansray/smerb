@@ -59,7 +59,6 @@ Gem.path.unshift(Merb.root / "gems")
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
 
-dependency "redcloth"
 dependency "merb-assets"
 dependency "merb-haml"
 dependency "merb-mailer"
@@ -73,7 +72,11 @@ dependency "dm-timestamps"
 dependency "dm-aggregates"
 dependency "dm-is-state_machine"
 dependency "merb_paginate"
+
+dependency "redcloth"
 dependency 'mollom'
+dependency "tlsmail"
+
 
 Merb::BootLoader.before_app_loads do 
   Merb::Slices::config[:merb_auth][:layout] = :application 
@@ -82,7 +85,17 @@ end
 Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
 
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  
   # dependency "magic_admin" # this gem uses the app's model classes
+  Merb::Mailer.config = {
+    :host => "smtp.gmail.com",
+    :port => "587",
+    :user => "mailer@bryanray.net",
+    :pass => '35B207',
+    :auth => :plain,
+    :domain => 'bryanray.net'
+  }
   
   # Never lose MySQL connection
   Thread.new do
