@@ -18,7 +18,7 @@ class Comments < Application
         :to => "bryan@bryanray.net",
         :subject => "[Comment] New Comment Created" 
       }, 
-      { :comment => comment }
+      { :comment => comment } unless comment.spam?
 
     render partial('comments/comment', :comment => comment), :layout => false
 

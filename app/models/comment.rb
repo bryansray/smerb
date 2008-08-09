@@ -24,9 +24,8 @@ class Comment
     red_cloth.to_html
   end
   
-  def is_spam=(value)
-    is_spam = (value.to_i == 4) ? false : true
-    attribute_set(:is_spam, is_spam)
+  def spam?
+    is_spam == "true" ? true : false
   end
   
   def check_comment_for_spam
