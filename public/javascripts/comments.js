@@ -18,14 +18,10 @@ RemoveComment = $.klass(Remote.Link, {
 	}
 });
 
-function remote_comment(comment) {
-	console.info(this);
-}
-
 CommentForm = $.klass(Remote.Form, {
 	initialize: function($super, options) {	
 		this.submit_button = $(".submit_comment", this.element);
-		this.submit_text = this.submit_button.text();
+		this.submit_text = this.submit_button.val();
 		
 		this.spinner = $(".small_spinner", this.element);
 		this.result_box = $("#comments");
@@ -56,7 +52,7 @@ CommentForm = $.klass(Remote.Form, {
 	},
 	
 	disable: function() {
-		this.submit_button.attr('disabled', 'disabled').val('Sending comment ...');
+		this.submit_button.attr('disabled', 'disabled').val('Sending ...');
 	},
 	
 	enable: function() {
