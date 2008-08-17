@@ -1,6 +1,26 @@
 $(document).ready(function($){
 	$("div.comment_form form").attach(CommentForm);
+	$(".comments .actions .delete").attach(RemoveComment, { type: 'DELETE', dataType: 'json' });
 });
+
+RemoveComment = $.klass(Remote.Link, {
+	initialize: function($super, options) {
+		this.comment = this.element.parents(".comment");
+
+		$super(options);
+	},
+	
+	complete: function(response, result) {
+	},
+	
+	success: function(a, b) {
+		this.comment.fadeOut('5000');
+	}
+});
+
+function remote_comment(comment) {
+	console.info(this);
+}
 
 CommentForm = $.klass(Remote.Form, {
 	initialize: function($super, options) {	

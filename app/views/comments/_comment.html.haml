@@ -1,4 +1,4 @@
-.comment{ :id => "comment_#{comment.id}"}
+.comment{ :id => "comment_#{comment.id}" }
   .author= link_to comment.author, comment.url, :target => "_new"
   %span.meta
     on
@@ -7,3 +7,7 @@
     %span.time= comment.created_at.display_time
   .text
     = comment.to_html
+  - if logged_in?
+    .actions
+      = link_to "Delete", url(:comment, comment), :class => "delete"
+  
