@@ -19,7 +19,7 @@
   .comment_box#comment_box
     %h4 Comments
     .comment_form#comment_form
-      - form_for Comment.new, :action => url(:comments) do
+      = form_for Comment.new, :action => url(:comments) do
         = hidden_control :post_id, :value => @post.id
         .name.clearfix
           = text_control :author, :label => "Name"
@@ -32,7 +32,7 @@
           = text_area_control :text, :label => "Comment (Textile enabled)"
 
         .comment_actions.clearfix
-          = submit_button "Create Comment", :class => "submit_comment"
+          = submit "Create Comment", :class => "submit_comment"
           .small_spinner
             %img{ :src => "/images/dots-white.gif" }
 
