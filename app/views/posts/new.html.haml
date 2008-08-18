@@ -12,7 +12,7 @@
         = text_control :published_at, :value => Date.today, :style => 'width: 165px'
         
         %h6 Current Status
-        = select_control :status, :label => 'Status', :collection => [['published', 'Published'], ['unpublished', 'Unpublished']]
+        = select_control :status, :collection => [['published', 'Published'], ['unpublished', 'Unpublished']], :label => 'Status'
           
       .content
         %h6 Viewable By

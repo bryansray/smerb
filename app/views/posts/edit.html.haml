@@ -1,4 +1,4 @@
-- form_for(:post, :action => url(:post, @post.id)) do 
+= form_for(:post, :action => url(:post, @post.id)) do 
   .left_column
     = text_control :title, :label => 'Title'
     = text_area_control :text, :label => 'Body', :rows => "10"
@@ -9,7 +9,7 @@
       
       .content
         %h6 Current Status
-        = select_control :status, :label => 'Status', :collection => %w{Published Unpublished}, :value_method => :downcase
+        / = select_control :status, :label => 'Status', :collection => [['published', 'Published'], ['unpublished', 'Unpublished']], :value_method => :first
           
       .content
         %h6 Viewable By
@@ -20,4 +20,4 @@
           %option Only Me
 
       .content.actions
-        = submit_button "Save"
+        = submit "Save"
