@@ -1,3 +1,4 @@
+$DEBUG = true
 #
 # ==== Structure of Merb initializer
 #

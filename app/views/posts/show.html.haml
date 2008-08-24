@@ -1,18 +1,5 @@
 - require_js 'comments'
 
-/ .comment_form#comment_form{ :style => "display: none;" }
-/   - form_for Comment.new, :action => url(:comments) do
-/     = hidden_control :post_id, :value => @post.id
-/     = text_control :author, :label => "Name"
-/     = text_control :email, :label => "Email"
-/     = text_control :url, :label => "URL"
-/     
-/     = text_area_control :text, :label => "Comment (Textile enabled)"
-/     
-/     .small_spinner
-/     .comment_waiting
-/     = submit_button "Create Comment", :class => "submit_comment"
-
 .left_column
   = partial :post, :post => @post
   
@@ -20,16 +7,16 @@
     %h4 Comments
     .comment_form#comment_form
       = form_for Comment.new, :action => url(:comments) do
-        = hidden_control :post_id, :value => @post.id
+        = hidden_field :post_id, :value => @post.id
         .name.clearfix
-          = text_control :author, :label => "Name"
+          = text_field :author, :label => "Name"
         .email.clearfix
-          = text_control :email, :label => "Email (private)"
+          = text_field :email, :label => "Email (private)"
         .url.clearfix
-          = text_control :url, :label => "URL"
+          = text_field :url, :label => "URL"
 
         .text.clearfix
-          = text_area_control :text, :label => "Comment (Textile enabled)"
+          = text_area :text, :label => "Comment (Textile enabled)"
 
         .comment_actions.clearfix
           = submit "Create Comment", :class => "submit_comment"

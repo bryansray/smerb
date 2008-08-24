@@ -1,7 +1,7 @@
 = form_for(:post, :action => url(:post), :method => :post) do 
   .left_column
-    = text_control :title, :label => 'Title'
-    = text_area_control :text, :label => 'Body', :rows => "10"
+    = text_field :title, :label => 'Title'
+    = text_area :text, :label => 'Body', :rows => "10"
   
   .right_column
     .widget
@@ -9,10 +9,10 @@
       
       .content
         %h6 Published at
-        = text_control :published_at, :value => Date.today, :style => 'width: 165px'
+        = text_field :published_at, :value => Date.today, :style => 'width: 165px'
         
         %h6 Current Status
-        = select_control :status, :collection => [['published', 'Published'], ['unpublished', 'Unpublished']], :label => 'Status'
+        = select :status, :collection => [['published', 'Published'], ['unpublished', 'Unpublished']], :label => 'Status'
           
       .content
         %h6 Viewable By

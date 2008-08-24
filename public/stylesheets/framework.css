@@ -29,6 +29,9 @@ body {
 
 .wrapper .inner {
 	padding: 10px;
+	margin-top: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .wrapper .footer, .navigation {
@@ -87,7 +90,8 @@ a, a:visited {
 .left_column {
 	float: left;
 	width: 570px;
-	margin-right: 30px;
+	margin-right: 10px;
+	padding-right: 10px;
 }
 
 .right_column {
@@ -95,12 +99,15 @@ a, a:visited {
 	width: 210px;
 }
 
+.posts .left_column {
+	border-right: 1px solid #cecece;
+}
+
 .sidebar {
 	margin-top: -10px;
 	background-color: #ffe;
-	border-left: 1px solid #cecece;
-	border-right: 1px solid #cecece;
-	border-bottom: 1px solid #cecece;
+	border: 1px solid #cecece;
+
 	min-height: 200px;
 	padding: 10px;
 	width: 235px;
