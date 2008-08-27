@@ -56,6 +56,16 @@ body {
 	font-size: 8pt;
 }
 
+.post .content h3 {
+	border-bottom: 1px solid #ccc;
+	background-color: #efefef;
+	padding: 4px;
+}
+
+.post .content h4 {
+	border-bottom: 1px solid #ccc;
+}
+
 #post_box .meta {
 	float: right;
 	margin-bottom: 0;
@@ -265,8 +275,8 @@ a.add_comment {
 	display: block;
 	font-family: Monaco, monospaced;
 	line-height: 16px;
-	margin: 15px 0;
-	padding: 10px;
+/*	margin: 15px 0;
+	padding: 10px;*/
 }
 
 .post .content li {
