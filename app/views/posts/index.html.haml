@@ -13,6 +13,17 @@
 .right_column.sidebar
   = link_to "XML Feed", url(:feeds, :format => :xml), :class => "xml_feed"
   
+  %h4 About Me
+  %p
+    I've been working with the Ruby language for the past year. Using both the Merb and Rails framework.
+    
+  %p 
+    I just recently started digging in to the Merb framework and trying to get a better feel for how things
+    works inside the system. It's been a great learning experience and the guys in the #merb channel have
+    been extremely helpful.
+    
+  %img{ :src => "http://lonestarrubyconf.com/images/LSRC_2008_attendee.png" }
+  
   %h4 Recent Comments
   #comment_box.comments
     - @comments.each do |comment|

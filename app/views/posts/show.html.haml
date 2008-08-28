@@ -8,6 +8,7 @@
     .comment_form#comment_form
       = form_for Comment.new, :action => url(:comments) do
         = hidden_field :post_id, :value => @post.id
+        = hidden_field :ip, :value => request.remote_ip
         .name.clearfix
           = text_field :author, :label => "Name"
         .email.clearfix
@@ -16,7 +17,7 @@
           = text_field :url, :label => "URL"
 
         .text.clearfix
-          = text_area :text, :label => "Comment (Textile enabled)"
+          = text_area :text, :label => "Comment (Textile enabled)", :cols => 70, :rows => 10
 
         .comment_actions.clearfix
           = submit "Create Comment", :class => "submit_comment"

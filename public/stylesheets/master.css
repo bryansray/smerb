@@ -56,10 +56,8 @@ body {
 	font-size: 8pt;
 }
 
-.post .content h3 {
-	border-bottom: 1px solid #ccc;
-	background-color: #efefef;
-	padding: 4px;
+.post .content h3, h4 {
+	color: #aaa;
 }
 
 .post .content h4 {
@@ -131,12 +129,10 @@ textarea#post_text {
 .comment_form label[for=comment_text] {
 	display: block;
 	float: none;
-	width: 335px;
+	width: 100%;
 }
 
 .comment_form textarea {
-	width: 325px;
-	height: 90px;
 	font-size: 9pt;
 }
 

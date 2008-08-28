@@ -2,7 +2,7 @@
   %h3= link_to post.title, url(:slug, :year => post.published_at.year, :month => post.published_at.month, :day => post.published_at.day, :slug => post.slug)
   .meta
     Posted by
-    %strong Bryan Ray 
+    %strong= link_to post.user.full_name, ""
     on 
     = post.published_at.display_date
     at
@@ -11,4 +11,4 @@
     = post.to_html
     
   .actions
-    %strong Tags:
+    %strong= link_to "#{post.comments.length} Comments", url(:slug, :year => post.published_at.year, :month => post.published_at.month, :day => post.published_at.day, :slug => post.slug) + "#comments"

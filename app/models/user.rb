@@ -38,5 +38,9 @@ class User
   before :save,   :encrypt_password
   before :create, :make_activation_code
   after  :create, :send_signup_notification
+  
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
 end
