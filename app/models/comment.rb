@@ -17,7 +17,7 @@ class Comment
   
   validates_present :author, :email, :text
   
-  before :save, :check_comment_for_spam, :unless ip == "127.0.0.1"
+  before :save, :check_comment_for_spam
   
   def to_html
     red_cloth = RedCloth.new text
