@@ -5,24 +5,26 @@
   
   .comment_box#comment_box
     %h4 Comments
-    .comment_form#comment_form
-      = form_for Comment.new, :action => url(:comments) do
-        = hidden_field :post_id, :value => @post.id
-        = hidden_field :ip, :value => request.remote_ip
-        .name.clearfix
-          = text_field :author, :label => "Name"
-        .email.clearfix
-          = text_field :email, :label => "Email (private)"
-        .url.clearfix
-          = text_field :url, :label => "URL"
-
-        .text.clearfix
-          = text_area :text, :label => "Comment (Textile enabled)", :cols => 70, :rows => 10
-
-        .comment_actions.clearfix
-          = submit "Create Comment", :class => "submit_comment"
-          .small_spinner
-            %img{ :src => "/images/dots-white.gif" }
+    %p
+      %i Comments have been disabled until I can implement better spam protection (ridiculous amounts of spam getting through).
+    / .comment_form#comment_form
+    /   = form_for Comment.new, :action => url(:comments) do
+    /     = hidden_field :post_id, :value => @post.id
+    /     = hidden_field :ip, :value => request.remote_ip
+    /     .name.clearfix
+    /       = text_field :author, :label => "Name"
+    /     .email.clearfix
+    /       = text_field :email, :label => "Email (private)"
+    /     .url.clearfix
+    /       = text_field :url, :label => "URL"
+    / 
+    /     .text.clearfix
+    /       = text_area :text, :label => "Comment (Textile enabled)", :cols => 70, :rows => 10
+    / 
+    /     .comment_actions.clearfix
+    /       = submit "Create Comment", :class => "submit_comment"
+    /       .small_spinner
+    /         %img{ :src => "/images/dots-white.gif" }
 
     #comments.comments
       - @comments.each do |comment|
